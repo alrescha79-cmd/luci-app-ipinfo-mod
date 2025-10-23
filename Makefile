@@ -9,7 +9,7 @@ LUCI_DEPENDS:=+curl
 LUCI_DESCRIPTION:=Displays IP address information in overview via ip.guide.
 
 PKG_MAINTAINER:=Anggun Caksono <caksonoanggun@gmail.com>
-PKG_VERSION:=2.4.4
+PKG_VERSION:=2.4.1
 PKG_LICENSE:=Apache-2.0
 PKG_RELEASE:=20251023
 
