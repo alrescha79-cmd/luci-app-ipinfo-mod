@@ -1,8 +1,3 @@
-/* This is free software, licensed under the Apache License, Version 2.0
- *
- * Copyright (C) 2024 Hilman Maulana <hilman0.0maulana@gmail.com>
- */
-
 'use strict';
 'require view';
 'require uci';
@@ -39,7 +34,6 @@ return view.extend({
 						return fs.exec('curl', ['-sL', 'ip.guide']).then(function(result) {
 							var data = JSON.parse(result.stdout);
 							jsonData.json = data;
-							// Measure latency to gstatic.com
 							return fs.exec('sh', ['-c', 'start=$(date +%s%3N); curl -s -m 5 -o /dev/null -w "%{http_code}" http://www.gstatic.com/generate_204; end=$(date +%s%3N); echo $((end-start))']).then(function(latencyResult) {
 								if (latencyResult.code === 0) {
 									var latency = parseInt(latencyResult.stdout.trim());
@@ -102,7 +96,6 @@ return view.extend({
 							var value;
 							var cellStyle = {};
 							
-							// Handle latency specially
 							if (key === 'latency') {
 								if (data.latency !== null && data.latency !== undefined) {
 									value = data.latency + ' ms';
