@@ -1,4 +1,6 @@
 name: "Build IPK"
+permissions:
+  contents: write
 on:
   repository_dispatch:
   workflow_dispatch: {}
